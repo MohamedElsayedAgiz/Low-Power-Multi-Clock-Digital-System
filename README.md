@@ -77,7 +77,6 @@ After CTS, hold analysis reported a worst slack of **-0.708 ns** with **341 viol
 │   ├── formality/
 │   ├── pnr/
 │   ├── primetime/
-│   ├── gls/
 │   └── spyglass/
 ├── tb/                  # Functional system-level testbench
 ├── .gitignore
