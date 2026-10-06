@@ -63,10 +63,14 @@ After CTS, hold analysis reported a worst slack of **-0.708 ns** with **341 viol
 
 ```text
 .
+├── constraints/
+│   ├── SYS_TOP_func.sdc
+│   ├── SYS_TOP_scan.sdc
+│   └── SYS_TOP_capture.sdc
+├── dft/                 # DFT-prepared top-level RTL
+├── docs/                # Technical project documentation
+├── reports/             # Selected project reports
 ├── rtl/                 # Functional RTL source
-├── tb/                  # Functional system-level testbench
-├── dft/                 # DFT-prepared top-level RTL delta
-├── constraints/         # DFT / MMMC constraint modes
 ├── scripts/
 │   ├── synthesis/
 │   ├── dft/
@@ -75,8 +79,9 @@ After CTS, hold analysis reported a worst slack of **-0.708 ns** with **341 viol
 │   ├── primetime/
 │   ├── gls/
 │   └── spyglass/
-├── reports/             # Selected project reports
-└── docs/                # Technical project documentation
+├── tb/                  # Functional system-level testbench
+├── .gitignore
+└── README.md
 ```
 
 ## Documentation
