@@ -1,0 +1,41 @@
+# Licensed technology / standard-cell data
+std_cells/
+pdk/
+technology/
+*.db
+*.lib
+*.lef
+*.gds
+*.capTbl
+
+# Technology-mapped / extracted outputs
+*.ddc
+*.svf
+*.sdf
+*.spf
+*.spef
+*_pg.v
+build/
+
+# EDA internal databases / caches
+*.enc
+*.enc.dat/
+*.qdb
+*.qpg
+*.qtl
+*.wlf
+work/
+INCA_libs/
+simv*
+csrc/
+
+# Activity / waveform / logs
+*.vcd
+VCD/
+*.log
+transcript
+
+# Editor / OS artifacts
+*~
+.DS_Store
+Thumbs.db
