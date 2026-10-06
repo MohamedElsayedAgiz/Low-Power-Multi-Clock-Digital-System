@@ -75,6 +75,9 @@ After CTS, hold analysis reported a worst slack of **-0.708 ns** with **341 viol
 │   ├── synthesis/
 │   ├── dft/
 │   ├── formality/
+│   │   ├── post-syn/
+│   │   ├── post-dft/
+│   │   └── post-PnR/
 │   ├── pnr/
 │   ├── primetime/
 │   └── spyglass/
