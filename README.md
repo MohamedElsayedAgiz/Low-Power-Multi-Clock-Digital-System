@@ -1,6 +1,6 @@
 # Low-Power Configurable Multi-Clock Digital System
 
-A UART-controlled multi-clock digital system implemented through an ASIC-oriented flow from RTL design and functional verification to synthesis, DFT, physical implementation, formal equivalence, gate-level simulation, and timing/power signoff.
+A UART-controlled multi-clock digital system developed through a complete Digital IC flow, starting from RTL design and functional verification through synthesis, DFT, physical implementation, formal verification, gate-level simulation, and final timing/power signoff.
 
 > **Repository note:** proprietary PDK/standard-cell libraries, EDA internal databases, and other license-controlled technology files are intentionally not included.
 
@@ -95,7 +95,9 @@ After CTS, hold analysis reported a worst slack of **-0.708 ns** with **341 viol
 
 ## Scripts and paths
 
-The flow scripts in this repository are the **original scripts used in the project**, kept unchanged. This includes their original relative and absolute paths. They are published as project/reference material rather than as a plug-and-play environment. Anyone re-running the flow should update the paths for their own installation and licensed technology setup.
+The scripts in this repository are the **original scripts used during the project** and are kept unchanged, including their original relative and absolute paths.
+
+Anyone re-running the flow should update the paths to match their own tool installation and licensed technology setup.
 
 The repository does not include PDK files, standard-cell libraries, technology LEF/capacitance data, standard-cell simulation models, or EDA internal databases.
 
