@@ -1,0 +1,64 @@
+
+current_design SYS_TOP
+
+####################################################################################
+           #########################################################
+                  #### Section 1 : Clock Definition ####
+           #########################################################
+#################################################################################### 
+
+clock -name REF_CLK  -period 20 -edge {0 10} -domain REF_DOMAIN
+
+clock -name UART_CLK -period 271.2673611 -edge {0 135.6336806} -domain UART_DOMAIN
+
+clock -name UART_TX_CLK -period 8680.5555552 -edge {0 4340.2777776} -domain UART_DOMAIN
+#Prescale=32
+clock -name UART_RX_CLK -period 271.2673611  -edge {0 135.6336806}  -domain UART_DOMAIN
+#Prescale=16
+#clock -name UART_RX_CLK -period 542.5347222 -edge {0 271.2673611} -domain UART_DOMAIN
+#Prescale=8
+#clock -name UART_RX_CLK -period 1085.0694444 -edge {0 542.5347222} -domain UART_DOMAIN
+
+clock -name GATED_CLK -period 20 -edge {0 10} -domain REF_DOMAIN
+
+# VIRTUAL Clock Domin for RST
+clock -tag VIRTUAL_RST_CLK -period 20 -edge {0 10} -domain VIRTUAL_RST_DOMAIN
+
+####################################################################################
+           #########################################################
+                  #### Section 2 : Reset Definition ####
+           #########################################################
+####################################################################################
+
+#Active Low Async Reset (RST)
+reset -name RST_N -value 0 -async
+
+####################################################################################
+           #########################################################
+             #### Section 3 : set input/output clock domains  ####
+           #########################################################
+####################################################################################
+
+abstract_port -ports UART_RX_IN      -clock UART_CLK
+abstract_port -ports RST_N           -clock VIRTUAL_RST_CLK    
+abstract_port -ports UART_TX_O       -clock UART_CLK 
+abstract_port -ports UART_TX_O_V     -clock UART_CLK
+abstract_port -ports UART_TX_O_V     -clock UART_CLK
+abstract_port -ports UART_TX_O_V     -clock UART_CLK    
+
+####################################################################################
+           #########################################################
+             #### Section 4 : Quasi static signals  ####
+           #########################################################
+####################################################################################
+
+quasi_static -name SYS_TOP.UART_Config
+quasi_static -name SYS_TOP.Div_Ratio
+
+####################################################################################
+             #### Section 5 : Constraints  ####
+####################################################################################
+
+#cdc_attribute -unrelated {SYS_TOP.FIFO_FULL SYS_TOP.RX_D_VLD_Sync}
+cdc_attribute -unrelated {SYS_TOP.U0_FIFO_TOP.r_ptr SYS_TOP.UART_RX_OUT_V}
+
